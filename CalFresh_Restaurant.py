@@ -30,22 +30,29 @@ with open(CalFreshRes_PDF, 'wb') as f:
 tables = camelot.read_pdf(CalFreshRes_PDF, pages='all')
 
 # Concatenate all the DataFrames into a single DataFrame
-CalFreshRest_df = pd.concat([table.df for table in tables])
+df = pd.concat([table.df for table in tables])
 
-# Remove the header row
-CalFreshRest_df = CalFreshRest_df.iloc[1:]
+# Initialize an empty list to hold dataframes
+dfs = []
 
-# Split the data into separate columns
-CalFreshRest_df['Name'] = CalFreshRest_df[0].str.split('\n').str[0]
-CalFreshRest_df['Address'] = CalFreshRest_df[0].str.split(
-    '\n').str[1] + CalFreshRest_df[0].str.split('\n').str[2]
-CalFreshRest_df['Phone Number'] = CalFreshRest_df[0].str.split('\n').str[3]
+# Iterate over each column in the DataFrame
+for col in df.columns:
+    # Split the data into separate columns and combine Address lines
+    tmp_df = pd.DataFrame()
+    tmp_df['Name'] = df[col].str.split('\n').str[0]
+    tmp_df['Address'] = df[col].str.split(
+        '\n').str[1] + df[col].str.split('\n').str[2]
+    tmp_df['Phone Number'] = df[col].str.split('\n').str[3]
 
-# Drop the first four columns
-CalFreshRest_df = CalFreshRest_df.drop(
-    CalFreshRest_df.columns[[0, 1, 2, 3]], axis=1)
+    # Append the temporary DataFrame to the list
+    dfs.append(tmp_df)
 
-# Print the processed data
+# Concatenate all the DataFrames in the list into a single DataFrame
+CalFreshRest_df = pd.concat(dfs, ignore_index=True)
+
+# Drop the rows with missing values
+CalFreshRest_df.dropna()
+
 print(CalFreshRest_df['Name'])
 
 # Geocode the addresses to get the latitude and longitude
@@ -72,16 +79,15 @@ if CalFreshRest_layer:
     # If a feature layer with the same name exists, delete it
     CalFreshRest_layer[0].delete()
 
-
 # Create a new item in the GIS
 CalFreshRest_prop = {'title': 'CalFresh Restaurants'}
 CalFreshRest_csv_item = gis.content.add(item_properties=CalFreshRest_prop,
                                         data="CalFreshRestRaw.csv")
 
 # Publish the CSV item as a feature layer
-feature_layer_item = CalFreshRest_csv_item.publish()
+CalFreshRest_feature_layer_item = CalFreshRest_csv_item.publish()
 
-feature_layer_item.move(folder_name)
+CalFreshRest_feature_layer_item.move(folder_name)
 
 # Delete the local CSV file
 os.remove("CalFreshRestRaw.csv")
