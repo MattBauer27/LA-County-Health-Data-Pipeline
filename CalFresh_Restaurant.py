@@ -50,8 +50,8 @@ for col in df.columns:
 # Concatenate all the DataFrames in the list into a single DataFrame
 CalFreshRest_df = pd.concat(dfs, ignore_index=True)
 
-# Drop the rows with missing values
-CalFreshRest_df.dropna()
+""" # Drop the rows with missing values
+CalFreshRest_df.dropna() """  # REAVALUATE THIS
 
 print(CalFreshRest_df['Name'])
 
