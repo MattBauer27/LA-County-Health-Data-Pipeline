@@ -6,7 +6,7 @@ import requests
 url = "https://services.arcgis.com/RmCCgQtiZLDCtblq/arcgis/rest/services/Public_Health_LOS_ANGELES_COUNTY_RESTAURANT_AND_MARKET_INSPECTIONS_/FeatureServer/0/query"
 
 params = {
-    "where": "PE_DESCRIPTION LIKE 'RESTAURANT%'",
+    "where": "PE_DESCRIPTION LIKE 'FOOD MKT RETAIL%'",
     "outFields": "*",
     "f": "json",
     "returnGeometry": "false",
