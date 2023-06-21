@@ -14,7 +14,7 @@ params = {
     "resultRecordCount": 1000
 }
 
-with open("restaurants.csv", "w", newline="") as f:
+with open("food_retailers.csv", "w", newline="") as f:
     writer = None
     while True:
         # Send the request
