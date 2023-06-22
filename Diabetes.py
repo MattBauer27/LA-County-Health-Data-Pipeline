@@ -4,7 +4,7 @@ import requests
 # Define the REST API URL
 url = "https://chronicdata.cdc.gov/resource/cwsq-ngmh.json"
 
-with open("obesity.csv", "w", newline="") as f:
+with open("diabetes.csv", "w", newline="") as f:
     writer = None
     offset = 0
     limit = 1000
@@ -12,7 +12,7 @@ with open("obesity.csv", "w", newline="") as f:
         # Set the request parameters
         params = {
             "countyname": "Los Angeles",
-            "measure": "Obesity among adults aged >=18 years",
+            "measure": "Diagnosed diabetes among adults aged >=18 years",
             "$offset": offset,
             "$limit": limit
         }
