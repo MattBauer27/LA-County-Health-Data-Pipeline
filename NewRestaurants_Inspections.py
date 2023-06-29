@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv
 import requests
 import pandas as pd
-import csv
 
 load_dotenv()
 
@@ -81,6 +80,7 @@ if not last_recorded_dates or last_update_date > last_recorded_dates[0]:
 
     # Convert records to a pandas DataFrame
     new_records_df = pd.DataFrame(records)
+    new_records_df = new_records_df.fillna('None')
 
     # Convert the 'ACTIVITY_DATE' column to datetime
     new_records_df['ACTIVITY_DATE'] = pd.to_datetime(
@@ -93,6 +93,11 @@ if not last_recorded_dates or last_update_date > last_recorded_dates[0]:
             f"restaurants_{last_recorded_dates[0]}.csv", encoding='utf-8')
         old_records_df['ACTIVITY_DATE'] = pd.to_datetime(
             old_records_df['ACTIVITY_DATE'])
+        old_records_df = old_records_df.fillna('None')
+
+        # Convert all columns to string type
+        old_records_df = old_records_df.astype(str)
+        new_records_df = new_records_df.astype(str)
 
         # Dataframe for rows present in new_records_df but not in old_records_df
         df_added = new_records_df[~new_records_df.apply(
