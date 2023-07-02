@@ -367,23 +367,33 @@ try:
             df['FULL_ADDRESS'] = df['FACILITY_ADDRESS'] + ', ' + df['FACILITY_CITY'] + \
                 ', ' + df['FACILITY__STATE'] + ', ' + df['FACILITY_ZIP']
 
-            # Geocoding in batches
-            addresses = df['FULL_ADDRESS'].tolist()
-            geocoded = []
+            # Load the existing GeoJSON file
+            previous_geojson_file = f"Restaurants/Geocoded_geojson/Geocoded_Combined_{last_recorded_dates_merged[0]}.geojson"
+            previous_gdf = gpd.read_file(previous_geojson_file)
+
+            # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
+            # values are (FACILITY_LATITUDE, FACILITY_LONGITUDE) tuples
+            location_dict = {f"{row['FACILITY_ID']}_{row['FACILITY_NAME']}_{row['FACILITY_ADDRESS']}": (row['geometry'].y, row['geometry'].x)
+                             for _, row in previous_gdf.iterrows()}
 
             # Geocoding addresses
-            for address in addresses:
-                try:
-                    geocoded_data = geocode(address)[0]
-                    geocoded.append(geocoded_data)
-                except IndexError:
-                    print(f"Could not geocode address: {address}")
-                    geocoded.append(None)
+            for index, row in df.iterrows():
+                composite_key = f"{row['FACILITY_ID']}_{row['FACILITY_NAME']}_{row['FACILITY_ADDRESS']}"
+                if composite_key in location_dict:
+                    # If the composite_key exists in the location_dict, use the existing latitude and longitude
+                    latitude, longitude = location_dict[composite_key]
+                else:
+                    try:
+                        # If the composite_key doesn't exist in the location_dict, geocode the address
+                        geocoded_data = geocode(row['FULL_ADDRESS'])[0]
+                        latitude, longitude = geocoded_data['location']['y'], geocoded_data['location']['x']
+                    except IndexError:
+                        print(
+                            f"Could not geocode address: {row['FULL_ADDRESS']}")
+                        latitude, longitude = None, None
 
-            df['FACILITY_LATITUDE'] = pd.to_numeric(
-                [g['location']['y'] if isinstance(g, dict) and 'location' in g and isinstance(g['location'], dict) else None for g in geocoded])
-            df['FACILITY_LONGITUDE'] = pd.to_numeric(
-                [g['location']['x'] if isinstance(g, dict) and 'location' in g and isinstance(g['location'], dict) else None for g in geocoded])
+                df.at[index, 'FACILITY_LATITUDE'] = latitude
+                df.at[index, 'FACILITY_LONGITUDE'] = longitude
 
             df = df.drop(columns=['FULL_ADDRESS'])
 
@@ -395,10 +405,10 @@ try:
 
             # Save GeoDataFrame to GeoJSON
             gdf.to_file(
-                "Restaurants/Geocoded_csv/Geocoded_Combined.geojson", driver='GeoJSON')
+                f"Restaurants/Geocoded_geojson/Geocoded_Combined_{update_date}.geojson", driver='GeoJSON')
 
             # Define the GeoJSON file path
-            geojson_file = "Restaurants/Geocoded_csv/Geocoded_Combined.geojson"
+            geojson_file = f"Restaurants/Geocoded_geojson/Geocoded_Combined_{update_date}.geojson"
 
             # If service already exists, overwrite its data
             if search_result:
@@ -411,7 +421,7 @@ try:
                 # Overwrite the feature layer using the GeoJSON file
                 feature_layer_collection.manager.overwrite(geojson_file)
             else:
-                # If service does not exist, publish the GeoJSON file as a new feature layer
+                # If service does not exist publish the GeoJSON file as a new feature layer
                 item_properties = {
                     "title": feature_layer_name,
                     "type": "GeoJson",
@@ -427,7 +437,6 @@ try:
 
             print("Finished updating: {} – ID: {}".format(
                 feature_layer_item.title, feature_layer_item.id))
-
     else:
         logger.info("No Update")
 
