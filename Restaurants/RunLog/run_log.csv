@@ -1,10 +1,1 @@
 2023-07-02 02:33:17,654 - Data Updated
-2023-07-02 03:38:11,779 - Exception occurred
-Traceback (most recent call last):
-  File "<ipython-input-1-8deb9fd8e358>", line 341, in <module>
-    geojson_item = gis_insp.content.add(
-  File "c:\Users\bauer\AppData\Local\Programs\Python\Python39\lib\site-packages\arcgis\gis\__init__.py", line 4241, in add
-    itemid = self._portal.add_item(params, None,
-  File "c:\Users\bauer\AppData\Local\Programs\Python\Python39\lib\site-packages\arcgis\gis\_impl\_portalpy.py", line 346, in add_item
-    owner = self.logged_in_user()['username']
-TypeError: 'NoneType' object is not subscriptable

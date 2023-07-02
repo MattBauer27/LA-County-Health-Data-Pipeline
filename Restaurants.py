@@ -352,7 +352,7 @@ try:
                 df.to_csv(csv_file, index=False)
 
             # Find the feature layer to update
-            feature_layer_name = "restaurants_com"
+            feature_layer_name = "Restaurants"
             search_result = gis_insp.content.search(
                 query="title:" + feature_layer_name + " AND owner:" + username, item_type="Feature Service")
 
