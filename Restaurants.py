@@ -352,9 +352,9 @@ try:
                 df.to_csv(csv_file, index=False)
 
             # Find the feature layer to update
-            feature_layer_name = "Restaurants"
+            feature_layer_name = "Restaurants_Inspection"
             search_result = gis_insp.content.search(
-                query="title:" + feature_layer_name + " AND owner:" + username, item_type="Feature Service")
+                query=f"title:\"{feature_layer_name}\" AND owner:{username}", item_type="Feature Service")
 
             # Identify the CSV file to use
             df = pd.read_csv(
@@ -367,14 +367,17 @@ try:
             df['FULL_ADDRESS'] = df['FACILITY_ADDRESS'] + ', ' + df['FACILITY_CITY'] + \
                 ', ' + df['FACILITY__STATE'] + ', ' + df['FACILITY_ZIP']
 
+            location_dict = {}
             # Load the existing GeoJSON file
-            previous_geojson_file = f"Restaurants/Geocoded_geojson/Geocoded_Combined_{last_recorded_dates_merged[0]}.geojson"
-            previous_gdf = gpd.read_file(previous_geojson_file)
+            if last_recorded_dates_merged:
+                previous_geojson_file = f"Restaurants/Geocoded_geojson/Geocoded_Combined_{last_recorded_dates_merged[0]}.geojson"
+                if os.path.isfile(previous_geojson_file):
+                    previous_gdf = gpd.read_file(previous_geojson_file)
 
-            # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
-            # values are (FACILITY_LATITUDE, FACILITY_LONGITUDE) tuples
-            location_dict = {f"{row['FACILITY_ID']}_{row['FACILITY_NAME']}_{row['FACILITY_ADDRESS']}": (row['geometry'].y, row['geometry'].x)
-                             for _, row in previous_gdf.iterrows()}
+                    # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
+                    # values are (FACILITY_LATITUDE, FACILITY_LONGITUDE) tuples
+                    location_dict = {f"{row['FACILITY_ID']}_{row['FACILITY_NAME']}_{row['FACILITY_ADDRESS']}": (row['geometry'].y, row['geometry'].x)
+                                     for _, row in previous_gdf.iterrows()}
 
             # Geocoding addresses
             for index, row in df.iterrows():
@@ -437,6 +440,7 @@ try:
 
             print("Finished updating: {} – ID: {}".format(
                 feature_layer_item.title, feature_layer_item.id))
+
     else:
         logger.info("No Update")
 
