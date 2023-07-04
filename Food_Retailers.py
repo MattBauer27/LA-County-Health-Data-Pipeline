@@ -344,7 +344,7 @@ try:
                 # If the CSV exists, load it and append the new data
                 if os.path.isfile(csv_file):
                     df = pd.read_csv(csv_file)
-                    df = df.append(result_df)
+                    df = pd.concat([df, result_df])
                 else:
                     df = result_df
 
@@ -441,8 +441,23 @@ try:
             print("Finished updating: {} – ID: {}".format(
                 feature_layer_item.title, feature_layer_item.id))
 
+            # Close the file handler
+            fh.close()
+            # Remove the handler from the logger
+            logger.removeHandler(fh)
+
     else:
         logger.info("No Update")
 
+        # Close the file handler
+        fh.close()
+        # Remove the handler from the logger
+        logger.removeHandler(fh)
+
 except Exception as e:
     logger.error("Exception occurred", exc_info=True)
+
+    # Close the file handler
+    fh.close()
+    # Remove the handler from the logger
+    logger.removeHandler(fh)

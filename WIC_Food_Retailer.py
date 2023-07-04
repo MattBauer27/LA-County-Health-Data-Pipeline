@@ -78,6 +78,9 @@ try:
 
     # If the last update date is more recent than the most recent date in the file, prepend it to the file
     if not last_recorded_dates or updated_date > last_recorded_dates[0]:
+
+        logger.info("Data Updated")
+
         with open(file_path, 'w') as f:
             f.write(updated_date + '\n')
             for recorded_date in last_recorded_dates:
@@ -99,23 +102,64 @@ try:
             records.extend(records_batch)
             offset += len(records_batch)
 
-        # Load the records into a DataFrame
-        df1 = pd.DataFrame(records)
-
-        # Drop the unnecessary columns
-        df1 = df1.drop(columns=['_id'])
-
         # Convert records to a pandas DataFrame
-        new_records_df = pd.DataFrame(records_insp)
-        # new_records_df = new_records_df.fillna('None')
+        new_records_df = pd.DataFrame(records)
+
+        # Remove duplicates
+        new_records_df = new_records_df.drop_duplicates(keep='last')
+
+        # Creating a function which will remove extra leading
+        # and tailing whitespace from the data.
+        # pass dataframe as a parameter here
+        def whitespace_remover(dataframe):
+
+            # iterating over the columns
+            for i in dataframe.columns:
+
+                # checking datatype of each columns
+                if dataframe[i].dtype == 'object':
+
+                    # applying strip function on column
+                    dataframe[i] = dataframe[i].map(str.strip)
+                else:
+
+                    # if condn. is False then it will do nothing.
+                    pass
+
+        # applying whitespace_remover function on dataframe
+        whitespace_remover(new_records_df)
+
+        # Turn ZIP into a string
+        new_records_df['ZIP'] = new_records_df['ZIP'].astype(str)
+
+        # Remove _id column
+        new_records_df = new_records_df.drop(['_id', 'rank'], axis=1)
+
+        # Rename columns
+        new_records_df = new_records_df.rename(columns={'CITY': 'City', 'SECOND ADDRESS': 'Second Address',
+                                                        'VENDOR': 'Vendor', 'ZIP': 'Zip_Code_Old', 'COUNTY': 'County', 'ADDRESS': 'Address', 'LONGITUDE': 'Longitude', 'LATITUDE': 'Latitude'})
+
+        # Reorder columns
+        new_records_df = new_records_df[['Vendor', 'Address',
+                                        'Second Address', 'City', 'Zip_Code_Old', 'County', 'Longitude', 'Latitude']]
+
+        new_records_df['Second Address'] = new_records_df['Second Address'].replace(
+            '', 'None')
+
+        new_records_df = new_records_df.fillna('None')
+
+        # Convert all string columns to title case
+        for col in new_records_df.columns:
+            # If the column is a string column
+            if new_records_df[col].dtype == 'object':
+                new_records_df[col] = new_records_df[col].str.title()
 
         new_records_df.to_csv(
             f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{updated_date}.csv", index=False, encoding='utf-8')
         if last_recorded_dates:
             old_records_df = pd.read_csv(
                 f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{last_recorded_dates[0]}.csv", encoding='utf-8')
-
-            # old_records_df = old_records_df.fillna('None')
+            old_records_df = old_records_df.fillna('None')
 
             # Convert all columns to string type
             old_records_df = old_records_df.astype(str)
@@ -125,46 +169,48 @@ try:
             df_added = new_records_df[~new_records_df.apply(
                 tuple, 1).isin(old_records_df.apply(tuple, 1))]
             df_added.to_csv(
-                f"WIC_Food_Retailers/Added/wic_food_retailers_{updated_date}.csv", index=False, encoding='utf-8')
+                f"WIC_Food_Retailers/Added/wic_food_retailers_added_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
             df_dropped = old_records_df[~old_records_df.apply(
                 tuple, 1).isin(new_records_df.apply(tuple, 1))]
             df_dropped.to_csv(
-                f"WIC_Food_Retailers/Dropped/wic_food_retailers_{updated_date}.csv", index=False, encoding='utf-8')
+                f"WIC_Food_Retailers/Dropped/wic_food_retailers_dropped_{updated_date}.csv", index=False, encoding='utf-8')
 
-        logger.info("Data Updated")
+            # Compute the number of newly opened and closed facilities
+            opened_df = new_records_df[~new_records_df['Vendor'].isin(
+                old_records_df['Vendor'])]
+            opened = len(opened_df)
 
-        # Compute the number of newly opened and closed facilities
-        opened_df = new_records_df[~new_records_df['VENDOR'].isin(
-            old_records_df['VENDOR'])]
-        opened = len(opened_df)
+            closed_df = old_records_df[~old_records_df['Vendor'].isin(
+                new_records_df['Vendor'])]
+            closed = len(closed_df)
 
-        closed_df = old_records_df[~old_records_df['VENDOR'].isin(
-            new_records_df['VENDOR'])]
-        closed = len(closed_df)
+            # Create new DataFrame to store the result
+            result_df = pd.DataFrame(
+                {"Date": [updated_date], "Added": [opened], "Removed": [closed]})
 
-        # Create new DataFrame to store the result
-        result_df = pd.DataFrame(
-            {"Date": [update_date], "Opened": [opened], "Closed": [closed]})
+            # Define CSV file
+            csv_file = "WIC_Food_Retailers/Status_update/Status_updates.csv"
 
-        # Define CSV file
-        csv_file = "WIC_Food_Retailers/Status_update/Status_updates.csv"
+            # If the CSV exists, load it and append the new data
+            if os.path.isfile(csv_file):
+                df = pd.read_csv(csv_file)
+                df = df.append(result_df)
+            else:
+                df = result_df
 
-        # If the CSV exists, load it and append the new data
-        if os.path.isfile(csv_file):
-            df = pd.read_csv(csv_file)
-            df = df.append(result_df)
-        else:
-            df = result_df
-
-        # Save to CSV
-        df.to_csv(csv_file, index=False)
+            # Save to CSV
+            df.to_csv(csv_file, index=False)
 
         # Find the feature layer to update
         feature_layer_name = "WIC_Food_Retailers"
         search_result = gis_insp.content.search(
             query=f"title:\"{feature_layer_name}\" AND owner:{username}", item_type="Feature Service")
+
+        # Identify the CSV file to use
+        df = pd.read_csv(
+            f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{updated_date}.csv")
 
         location_dict = {}
         # Load the existing GeoJSON file
@@ -175,21 +221,20 @@ try:
 
                 # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
                 # values are (LATITUDE, LONGITUDE) tuples
-                location_dict = {f"{row['VENDOR']}_{row['ADDRESS']}": (row['geometry'].y, row['geometry'].x)
+                location_dict = {f"{row['Vendor']}_{row['Address']}": (row['geometry'].y, row['geometry'].x)
                                  for _, row in previous_gdf.iterrows()}
 
         # Transform DataFrame to GeoDataFrame
         geometry = [Point(xy) for xy in zip(
-            df.LONGITUDE, df.LATITUDE)]
-        df = df.drop(['LONGITUDE', 'LATITUDE'], axis=1)
+            df.Longitude, df.Latitude)]
         gdf = gpd.GeoDataFrame(df, geometry=geometry)
 
         # Save GeoDataFrame to GeoJSON
         gdf.to_file(
-            f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{update_date}.geojson", driver='GeoJSON')
+            f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{updated_date}.geojson", driver='GeoJSON')
 
         # Define the GeoJSON file path
-        geojson_file = f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{update_date}.geojson"
+        geojson_file = f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{updated_date}.geojson"
 
         # If service already exists, overwrite its data
         if search_result:
@@ -213,14 +258,63 @@ try:
                 item_properties, geojson_file)
             feature_layer_item = geojson_item.publish()
 
+        # Define the new field
+        zip_code_new = {
+            'name': 'Zip_Code',
+            'type': 'esriFieldTypeString',
+            'alias': 'Zip Code',
+            'sqlType': 'sqlTypeVarchar',
+            'length': '20',
+            'nullable': True,
+            'editable': True
+        }
+
+        flc = FeatureLayerCollection.fromitem(feature_layer_item)
+
+        # Query the FeatureLayer
+        features = flc.layers[0].query()
+
+        # Copy the values from the old field to the new field
+        for feature in features:
+            feature.attributes['Zip_Code'] = feature.attributes['Zip_Code_Old']
+
+        # Get the feature layer
+        feature_layer = flc.layers[0]
+
+        # Step 2: Add the new field
+        feature_layer.manager.add_to_definition(
+            {'fields': [zip_code_new]})
+
+        # Update the features in the FeatureLayer
+        feature_layer.edit_features(updates=features)
+
+        # Optional Step 3: Delete the old field
+        feature_layer.manager.delete_from_definition(
+            {'fields': [{'name': 'Zip_Code_Old'}]})
+
         # Move the item to a folder
         feature_layer_item.move(folder=folder_name)
 
         print("Finished updating: {} – ID: {}".format(
             feature_layer_item.title, feature_layer_item.id))
 
+        # Close the file handler
+        fh.close()
+        # Remove the handler from the logger
+        logger.removeHandler(fh)
+
     else:
         logger.info("No Update")
 
+        # Close the file handler
+        fh.close()
+        # Remove the handler from the logger
+        logger.removeHandler(fh)
+
 except Exception as e:
     logger.error("Exception occurred", exc_info=True)
+
+    # Close the file handler
+    fh.close()
+    # Remove the handler from the logger
+    logger.removeHandler(fh)
