@@ -14,6 +14,8 @@ import datetime
 import json
 import urllib.request
 from xml.etree import ElementTree as ET
+import pdfplumber
+import re
 
 load_dotenv()
 
@@ -23,7 +25,7 @@ logger.setLevel(logging.DEBUG)
 # create file handler which logs even debug messages
 now = datetime.datetime.now()
 logging_date = now.strftime("%Y-%m-%d")
-fh = logging.FileHandler(f'WIC_Food_Retailers/RunLog/run_log.csv')
+fh = logging.FileHandler(f'Farmers_Markets/RunLog/run_log.csv')
 fh.setLevel(logging.DEBUG)
 # create console handler with a higher log level
 ch = logging.StreamHandler()
@@ -46,28 +48,55 @@ try:
     username = "mkbauer_USCSSI"
     folder_name = os.getenv("folder_name")
 
-    url = 'https://data.chhs.ca.gov/datastore/odata3.0/ee10b67b-2b93-47e7-aa41-cecfbbd32e17?$top=1&$format=xml'
-    ns = {'default': 'http://www.w3.org/2005/Atom'}  # define namespace
+    # URL of the PDF
+    pdf_url = "https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf"
 
-    response = urllib.request.urlopen(url)
-    data = response.read()  # a `bytes` object
-    xml_content = data.decode('utf-8')
+    # Download the PDF
+    response = requests.get(pdf_url)
+    pdf_path = "CurrentMrktsCounty.pdf"
 
-    root = ET.fromstring(xml_content)
-    updated_element = root.find('default:updated', ns)
-    if updated_element is not None:
-        # remove the last character 'Z'
-        updated_text = updated_element.text[:-1]
-        updated_datetime = datetime.datetime.strptime(
-            updated_text, "%Y-%m-%dT%H:%M:%S.%f")
-        updated_date = updated_datetime.date()  # Convert to date
-        updated_date = updated_date.strftime("%Y-%m-%d")
-        print(updated_date)
-    else:
-        print('updated field not found')
+    with open(pdf_path, "wb") as f:
+        f.write(response.content)
+
+    # Open the PDF
+    pdf = pdfplumber.open(pdf_path)
+
+    # Initialize variables
+    headers = []
+
+    # Iterate over each page in the PDF
+    for page in pdf.pages:
+        # Extract text from the page
+        text = page.extract_text()
+
+        # Extract header from the page
+        header = text.split('\n')[:3]
+        headers.append(header)
+
+    # Close the PDF
+    pdf.close()
+
+    # Remove the PDF
+    os.remove(pdf_path)
+
+    # Extract date from header
+    # The date is on the second line of the header
+    updated_date = headers[1][1]
+
+    # Extract date from the string
+    updated_date = updated_date.replace(
+        'as of ', '')  # Remove the 'as of ' part
+
+    # Convert to datetime object
+    date_obj = datetime.datetime.strptime(updated_date, '%B %d, %Y')
+
+    # Convert to 'YYYY-MM-DD' format
+    updated_date = date_obj.strftime('%Y-%m-%d')
+
+    print(updated_date)
 
     # Check if file exists and get the last update date
-    file_path = 'WIC_Food_Retailers/Dates_txts/last_update.txt'
+    file_path = 'Farmers_Markets/Dates_txts/last_update.txt'
     if os.path.isfile(file_path):
         with open(file_path, 'r') as f:
             last_recorded_dates = [line.strip()
@@ -85,27 +114,49 @@ try:
             for recorded_date in last_recorded_dates:
                 f.write(recorded_date + '\n')
 
-        url = 'https://data.chhs.ca.gov/api/3/action/datastore_search?q=Los_Angeles&resource_id=ee10b67b-2b93-47e7-aa41-cecfbbd32e17&limit=100'
-        offset = 0
-        records = []
+        # URL of the PDF
+        pdf_url = "https://www.cdfa.ca.gov/is/docs/CurrentMrktsCounty.pdf"
 
-        while True:
-            response = urllib.request.urlopen(f"{url}&offset={offset}")
-            response_dict = json.loads(response.read())
-            records_batch = response_dict['result']['records']
+        # Download the PDF
+        response = requests.get(pdf_url)
+        pdf_path = "CurrentMrktsCounty.pdf"
 
-            # If no more records, break the loop
-            if not records_batch:
-                break
+        with open(pdf_path, "wb") as f:
+            f.write(response.content)
 
-            records.extend(records_batch)
-            offset += len(records_batch)
+        # Open the PDF
+        pdf = pdfplumber.open(pdf_path)
 
-        # Convert records to a pandas DataFrame
-        new_records_df = pd.DataFrame(records)
+        # Initialize variables
+        data = []
 
-        # Remove duplicates
-        new_records_df = new_records_df.drop_duplicates(keep='last')
+        # Iterate over each page in the PDF
+        for page in pdf.pages:
+
+            # Extract table data from the page
+            table = page.extract_table()
+            if table:
+                data.extend(table)
+
+        # Close the PDF
+        pdf.close()
+
+        # Remove the PDF
+        os.remove(pdf_path)
+
+        # Filter out rows which don't have 'Los Angeles' in the County Name column
+        los_angeles_data = [row for row in data if row[0] == 'Los Angeles']
+
+        # Separate the headers from the data
+        headers = data[0]
+
+        # Replace newline characters with a space
+        headers = [header.replace('\n', ' ') for header in headers]
+
+        # Create a DataFrame
+        new_records_df = pd.DataFrame(los_angeles_data, columns=headers)
+
+        new_records_df.replace('\n', ' ', regex=True, inplace=True)
 
         # Creating a function which will remove extra leading
         # and tailing whitespace from the data.
@@ -128,36 +179,14 @@ try:
         # applying whitespace_remover function on dataframe
         whitespace_remover(new_records_df)
 
-        # Turn ZIP into a string
-        new_records_df['ZIP'] = new_records_df['ZIP'].astype(str)
-
-        # Remove _id column
-        new_records_df = new_records_df.drop(['_id', 'rank'], axis=1)
-
-        # Rename columns
-        new_records_df = new_records_df.rename(columns={'CITY': 'City', 'SECOND ADDRESS': 'Second Address',
-                                                        'VENDOR': 'Vendor', 'ZIP': 'Zip_Code_Old', 'COUNTY': 'County', 'ADDRESS': 'Address', 'LONGITUDE': 'Longitude', 'LATITUDE': 'Latitude'})
-
-        # Reorder columns
-        new_records_df = new_records_df[['Vendor', 'Address',
-                                        'Second Address', 'City', 'Zip_Code_Old', 'County', 'Longitude', 'Latitude']]
-
-        new_records_df['Second Address'] = new_records_df['Second Address'].replace(
-            '', 'None')
-
         new_records_df = new_records_df.fillna('None')
 
-        # Convert all string columns to title case
-        for col in new_records_df.columns:
-            # If the column is a string column and not 'Longitude' or 'Latitude'
-            if new_records_df[col].dtype == 'object' and col not in ['Longitude', 'Latitude']:
-                new_records_df[col] = new_records_df[col].str.title()
-
+        # CONTINUE CONNTINUE
         new_records_df.to_csv(
-            f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{updated_date}.csv", index=False, encoding='utf-8')
+            f"Farmers_Markets/Base_csvs/farmers_markets_{updated_date}.csv", index=False, encoding='utf-8')
         if last_recorded_dates:
             old_records_df = pd.read_csv(
-                f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{last_recorded_dates[0]}.csv", encoding='utf-8')
+                f"Farmers_Markets/Base_csvs/farmers_markets_{last_recorded_dates[0]}.csv", encoding='utf-8')
             old_records_df = old_records_df.fillna('None')
 
             # Convert all columns to string type
@@ -168,21 +197,21 @@ try:
             df_added = new_records_df[~new_records_df.apply(
                 tuple, 1).isin(old_records_df.apply(tuple, 1))]
             df_added.to_csv(
-                f"WIC_Food_Retailers/Added/wic_food_retailers_added_{updated_date}.csv", index=False, encoding='utf-8')
+                f"Farmers_Markets/Added/farmers_markets_added_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
             df_dropped = old_records_df[~old_records_df.apply(
                 tuple, 1).isin(new_records_df.apply(tuple, 1))]
             df_dropped.to_csv(
-                f"WIC_Food_Retailers/Dropped/wic_food_retailers_dropped_{updated_date}.csv", index=False, encoding='utf-8')
+                f"Farmers_Markets/Dropped/farmers_markets_dropped_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Compute the number of newly opened and closed facilities
-            opened_df = new_records_df[~new_records_df['Vendor'].isin(
-                old_records_df['Vendor'])]
+            opened_df = new_records_df[~new_records_df['Market Name'].isin(
+                old_records_df['Market Name'])]
             opened = len(opened_df)
 
-            closed_df = old_records_df[~old_records_df['Vendor'].isin(
-                new_records_df['Vendor'])]
+            closed_df = old_records_df[~old_records_df['Market Name'].isin(
+                new_records_df['Market Name'])]
             closed = len(closed_df)
 
             # Create new DataFrame to store the result
@@ -190,7 +219,7 @@ try:
                 {"Date": [updated_date], "Added": [opened], "Removed": [closed]})
 
             # Define CSV file
-            csv_file = "WIC_Food_Retailers/Status_update/Status_updates.csv"
+            csv_file = "Farmers_Markets/Status_update/Status_updates.csv"
 
             # If the CSV exists, load it and append the new data
             if os.path.isfile(csv_file):
@@ -203,24 +232,21 @@ try:
             df.to_csv(csv_file, index=False)
 
         # Find the feature layer to update
-        feature_layer_name = "WIC_Food_Retailers"
+        feature_layer_name = "Farmers_Markets"
         search_result = gis_insp.content.search(
             query=f"title:\"{feature_layer_name}\" AND owner:{username}", item_type="Feature Service")
 
         # Identify the CSV file to use
         df = pd.read_csv(
-            f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{updated_date}.csv")
+            f"Farmers_Markets/Base_csvs/farmers_markets_{updated_date}.csv")
 
         location_dict = {}
         # Load the existing GeoJSON file
         if last_recorded_dates:
-            previous_geojson_file = f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{last_recorded_dates[0]}.geojson"
+            previous_geojson_file = f"Farmers_Markets/Geocoded_geojson/farmers_markets_{last_recorded_dates[0]}.geojson"
             if os.path.isfile(previous_geojson_file):
                 previous_gdf = gpd.read_file(previous_geojson_file)
-
-                # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
-                # values are (LATITUDE, LONGITUDE) tuples
-                location_dict = {f"{row['Vendor']}_{row['Address']}": (row['geometry'].y, row['geometry'].x)
+                location_dict = {f"{row['Market Name']}_{row['Market Location']}": (row['geometry'].y, row['geometry'].x)
                                  for _, row in previous_gdf.iterrows()}
 
         # Transform DataFrame to GeoDataFrame
@@ -230,10 +256,10 @@ try:
 
         # Save GeoDataFrame to GeoJSON
         gdf.to_file(
-            f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{updated_date}.geojson", driver='GeoJSON')
+            f"Farmers_Markets/Geocoded_geojson/farmers_markets_{updated_date}.geojson", driver='GeoJSON')
 
         # Define the GeoJSON file path
-        geojson_file = f"WIC_Food_Retailers/Geocoded_geojson/wic_food_retailers_{updated_date}.geojson"
+        geojson_file = f"Farmers_Markets/Geocoded_geojson/farmers_markets_{updated_date}.geojson"
 
         # If service already exists, overwrite its data
         if search_result:
@@ -256,40 +282,6 @@ try:
             geojson_item = gis_insp.content.add(
                 item_properties, geojson_file)
             feature_layer_item = geojson_item.publish()
-
-        # Define the new field
-        zip_code_new = {
-            'name': 'Zip_Code',
-            'type': 'esriFieldTypeString',
-            'alias': 'Zip Code',
-            'sqlType': 'sqlTypeVarchar',
-            'length': '20',
-            'nullable': True,
-            'editable': True
-        }
-
-        flc = FeatureLayerCollection.fromitem(feature_layer_item)
-
-        # Query the FeatureLayer
-        features = flc.layers[0].query()
-
-        # Copy the values from the old field to the new field
-        for feature in features:
-            feature.attributes['Zip_Code'] = feature.attributes['Zip_Code_Old']
-
-        # Get the feature layer
-        feature_layer = flc.layers[0]
-
-        # Step 2: Add the new field
-        feature_layer.manager.add_to_definition(
-            {'fields': [zip_code_new]})
-
-        # Update the features in the FeatureLayer
-        feature_layer.edit_features(updates=features)
-
-        # Optional Step 3: Delete the old field
-        feature_layer.manager.delete_from_definition(
-            {'fields': [{'name': 'Zip_Code_Old'}]})
 
         # Move the item to a folder
         feature_layer_item.move(folder=folder_name)
