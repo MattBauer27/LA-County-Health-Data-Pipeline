@@ -1,5 +1,6 @@
 Vendor,Address,Second Address,City,Zip_Code_Old,County,Longitude,Latitude
 Vallarta Supermarkets #18,10161 San Fernando Rd,None,Pacoima,91331,Los Angeles,-118.4108,34.25504
+Vallarta Supermarkets #11,21208 Sherman Way,None,Canoga Park,91303,Los Angeles,-118.5949,34.20061
 Ralphs #291,4760 W Pico Blvd,None,Los Angeles,90019,Los Angeles,-118.3394,34.04771
 Vallarta Supermarket #17,10950 Sherman Way,None,Burbank,91505,Los Angeles,-118.3678,34.20043
 Vallarta Supermarket #20,1803 E Palmdale Blvd,None,Palmdale,93550,Los Angeles,-118.0959,34.58083
@@ -7,7 +8,7 @@ Vallarta Supermarket #01,13051 Victory Blvd,None,North Hollywood,91606,Los Angel
 Vallarta Supermarkets #15,13940 Ramona Blvd,None,Baldwin Park,91706,Los Angeles,-117.9687,34.08315
 Vallarta Supermarket #14,1801 W Avenue I,None,Lancaster,93534,Los Angeles,-118.1633,34.7048
 Vallarta Supermarket #27,815 East Avenue K,None,Lancaster,93535,Los Angeles,-118.114,34.67648
-Mommy'S Nutritional Center,312 N Gaffey St Unit 100,None,San Pedro,90731,Los Angeles,-118.2919,33.74542
+Mommy's Nutritional Center,312 N Gaffey St Unit 100,None,San Pedro,90731,Los Angeles,-118.2919,33.74542
 Vallarta Supermarket #43,757 S Workman St,None,San Fernando,91340,Los Angeles,-118.4525,34.28268
 Vallarta Supermarket #50,8510 Painter Ave Ste L,None,Whittier,90602,Los Angeles,-118.0343,33.96066
 Vallarta Supermarket #48,7900 Imperial Hwy,None,Downey,90242,Los Angeles,-118.1542,33.92473
@@ -18,10 +19,10 @@ Walnut Produce Market,2690 E Florence Ave,None,Huntington Park,90255,Los Angeles
 Vallarta Supermarket #19,23449 Lyons Ave,None,Valencia,91355,Los Angeles,-118.5436,34.38047
 East 15Th Street Market,1732 E 15Th St,None,Long Beach,90813,Los Angeles,-118.1703,33.78607
 La Poblana Carniceria,5928 East Whittier Blvd,None,Los Angeles,90022,Los Angeles,-118.1434,34.01729
-Mommy'S Nutritional Center,1644 W Carson St Ste D,None,Torrance,90501,Los Angeles,-118.3079,33.83104
-Mommy'S Nutritional Center #11,4455 117Th St Ste 102,None,Hawthorne,90250,Los Angeles,-118.3539,33.92838
-Mommy'S Nutritional Center,125 E Anaheim St Ste F,None,Wilmington,90744,Los Angeles,-118.2616,33.78043
-Mommy'S Nutritional Center,860 E Carson St Ste 112,None,Carson,90745,Los Angeles,-118.2598,33.83107
+Mommy's Nutritional Center,1644 W Carson St Ste D,None,Torrance,90501,Los Angeles,-118.3079,33.83104
+Mommy's Nutritional Center #11,4455 117Th St Ste 102,None,Hawthorne,90250,Los Angeles,-118.3539,33.92838
+Mommy's Nutritional Center,125 E Anaheim St Ste F,None,Wilmington,90744,Los Angeles,-118.2616,33.78043
+Mommy's Nutritional Center,860 E Carson St Ste 112,None,Carson,90745,Los Angeles,-118.2598,33.83107
 Food 4 Less #306,44455 Valley Central Way,None,Lancaster,93536,Los Angeles,-118.1739,34.69056
 Food 4 Less #307,6901 Eastern Ave,None,Bell Gardens,90201,Los Angeles,-118.1661,33.97069
 Food 4 Less #313,14500 Ocean Gate Ave,None,Hawthorne,90250,Los Angeles,-118.3665,33.8994
@@ -88,16 +89,16 @@ Ralphs #712,1100 N San Fernando Blvd,None,Burbank,91504,Los Angeles,-118.3182,34
 El Ahorro Store,449 W Anaheim St Unit B,Unit B,Green,90037,Los Angeles,-118.2674,33.78003
 Hawaii Supermarket,120 E Valley Blvd,None,San Gabriel,91776,Los Angeles,-118.0986,34.07925
 Ralphs #728,2909 Rolling Hills Rd,None,Torrance,90505,Los Angeles,-118.3404,33.78941
-Jon'S Marketplace #02,6655 Van Nuys Blvd,None,Van Nuys,91405,Los Angeles,-118.4493,34.19223
+Jon's Marketplace #02,6655 Van Nuys Blvd,None,Van Nuys,91405,Los Angeles,-118.4493,34.19223
 Ralphs #724,9040 W Beverly Blvd,None,West Hollywood,90048,Los Angeles,-118.389,34.07665
 Vallarta Supermarket #38,38118 47Th St,None,Palmdale,93552,Los Angeles,-118.0438,34.57485
-Jon'S Fresh Marketplace #09,1717 Glenoaks Blvd,None,Glendale,91201,Los Angeles,-118.2897,34.172
+Jon's Fresh Marketplace #09,1717 Glenoaks Blvd,None,Glendale,91201,Los Angeles,-118.2897,34.172
 Ralphs #715,330 N Atlantic Blvd,None,Monterey Park,91754,Los Angeles,-118.1336,34.06531
-Jon'S Marketplace #14,600 E Colorado St,None,Glendale,91205,Los Angeles,-118.248,34.14245
-Jon'S Marketplace #15,20151 Roscoe Blvd,None,Winnetka,91306,Los Angeles,-118.5728,34.22103
-Jon'S Marketplace #16,12122 Magnolia Blvd,None,North Hollywood,91607,Los Angeles,-118.3974,34.16442
-Jon'S Marketplace #19,7134 Sepulveda Blvd,None,Van Nuys,91405,Los Angeles,-118.4656,34.20014
-Jon'S Fresh Marketplace #4,4848 W 190Th St,None,Torrance,90503,Los Angeles,-118.3635,33.85772
+Jon's Marketplace #14,600 E Colorado St,None,Glendale,91205,Los Angeles,-118.248,34.14245
+Jon's Marketplace #15,20151 Roscoe Blvd,None,Winnetka,91306,Los Angeles,-118.5728,34.22103
+Jon's Marketplace #16,12122 Magnolia Blvd,None,North Hollywood,91607,Los Angeles,-118.3974,34.16442
+Jon's Marketplace #19,7134 Sepulveda Blvd,None,Van Nuys,91405,Los Angeles,-118.4656,34.20014
+Jon's Fresh Marketplace #4,4848 W 190Th St,None,Torrance,90503,Los Angeles,-118.3635,33.85772
 El Castillo Carniceria Food Mk,11924 Foothill Blvd,None,Sylmar,91342,Los Angeles,-118.3963,34.27563
 Ralphs #709,11361 National Blvd,None,Los Angeles,90064,Los Angeles,-118.4334,34.02601
 Ralphs #730,3601 E Foothill Blvd,None,Pasadena,91107,Los Angeles,-118.0755,34.15134
@@ -196,7 +197,7 @@ Target Store T-0189,5600 Whittier Blvd,None,Los Angeles,90022,Los Angeles,-118.1
 Target Store T-0257,24425 Magic Mountain Pkwy,None,Valencia,91355,Los Angeles,-118.5614,34.4211
 Target Store T-0245,43525 10Th St W,None,Lancaster,93534,Los Angeles,-118.1497,34.67327
 Target Store T-0184,2120 W Main St,None,Alhambra,91801,Los Angeles,-118.1473,34.09137
-Jon'S Marketplace #24,18135 Sherman Way,None,Reseda,91335,Los Angeles,-118.5289,34.20196
+Jon's Marketplace #24,18135 Sherman Way,None,Reseda,91335,Los Angeles,-118.5289,34.20196
 Target Store T-0685,39440 10Th St W,None,Palmdale,93551,Los Angeles,-118.1465,34.59983
 Target Store T-2831,701 Rio Rancho Rd,None,Pomona,91765,Los Angeles,-117.7558,34.03484
 Target Store T-1547,800 New Los Angeles Ave,None,Moorpark,93021,Ventura,-118.8672,34.27827
@@ -254,6 +255,8 @@ Walmart #3523,26471 Carl Boyer Dr,None,Santa Clarita,91350,Los Angeles,-118.5065
 Walmart #2886,8500 Washington Blvd,None,Pico Rivera,90660,Los Angeles,-118.1051,33.98492
 Ralphs #277,950 N La Brea Ave,None,Inglewood,90302,Los Angeles,-118.3569,33.97548
 Smart & Final #428,1855 W Glenoaks Blvd,None,Glendale,91201,Los Angeles,-118.2923,34.17466
+Smart & Final #511,2511 Daly St,None,Lincoln Heights,90031,Los Angeles,-118.2166,34.07542
+Smart & Final #471,3708 W. Burbank Blvd,None,Burbank,91505,Los Angeles,-118.3509,34.17414
 Walmart #2951,1731 E Avenue J,None,Lancaster,93535,Los Angeles,-118.0978,34.69254
 Walmart #2526,19821 Rinaldi St,None,Porter Ranch,91326,Los Angeles,-118.5668,34.27762
 Ralphs #266,11922 S Vermont Ave,None,Los Angeles,90044,Los Angeles,-118.291,33.92508
@@ -265,8 +268,6 @@ Walmart #2110,14501 Lakewood Blvd,None,Paramount,90723,Los Angeles,-118.1454,33.
 Walmart #5686,1301 N Victory Pl,None,Burbank,91502,Los Angeles,-118.3252,34.18816
 Walmart #5807,2100 N Long Beach Blvd,None,Compton,90221,Los Angeles,-118.2083,33.90997
 Target Store T-2424,6750 Cherry Ave,None,Long Beach,90805,Los Angeles,-118.1662,33.87708
-Smart & Final #511,2511 Daly St,None,Lincoln Heights,90031,Los Angeles,-118.2166,34.07542
-Smart & Final #471,3708 W. Burbank Blvd,None,Burbank,91505,Los Angeles,-118.3509,34.17414
 Smart & Final #512,7224 Mason Ave,None,Winnetka,91306,Los Angeles,-118.5786,34.20201
 Smart & Final #437,39212 10Th St West,None,Palmdale,93551,Los Angeles,-118.1449,34.59599
 Smart & Final #598,4237 Woodruff Ave,None,Lakewood,90713,Los Angeles,-118.1179,33.83474
@@ -291,7 +292,7 @@ Smart & Final #745,4480 Atlantic Ave,None,Long Beach,90807,Los Angeles,-118.1844
 Smart & Final #790,3111 E Florence Ave,None,Huntington Park,90255,Los Angeles,-118.2115,33.97333
 Smart & Final #525,864 W. Los Angeles Ave,None,Moorpark,93021,Ventura,-118.8205,34.28714
 Smart & Final #917,5135 Los Angeles Ave,None,Simi Valley,93063,Ventura,-118.6927,34.27276
-Mickey'S Nutrition,7096 East Gage Avenue,None,Commerce,90040,Los Angeles,-118.1294,33.97325
+Mickey's Nutrition,7096 East Gage Avenue,None,Commerce,90040,Los Angeles,-118.1294,33.97325
 California Kids Nutr. Cente,4505 East Slauson Avenue Suite D,Ste D,Maywood,90270,Los Angeles,-118.1847,33.98738
 Vons #2283,1221 Gaffey St,None,San Pedro,90731,Los Angeles,-118.293485,33.732924
 Vons #2273,245 Palos Verdes Blvd,None,Redondo Beach,90277,Los Angeles,-118.386154,33.816212
@@ -370,7 +371,7 @@ B & B Nutrition,7008 Santa Fe Avenue,None,Huntington Park,90255,Los Angeles,-118
 Villalobos Meat Market,5244 Santa Monica Blvd,None,Los Angeles,90029,Los Angeles,-118.3047,34.09061
 Azteca 99 Cents Plus Market,1662 1/2 East 41St Street,None,Los Angeles,90011,Los Angeles,-118.2439,34.00798
 La Bodega #2,1001 E. 10Th St,None,Long Beach,90813,Los Angeles,-118.1805,33.77917
-Raul'S Market,11214 S Central Ave,None,Los Angeles,90059,Los Angeles,-118.2538,33.9325
+Raul's Market,11214 S Central Ave,None,Los Angeles,90059,Los Angeles,-118.2538,33.9325
 Rowan Food Market,535 S Rowan Ave,None,Los Angeles,90063,Los Angeles,-118.1876,34.02943
 S & M Nutrition #2,12039 Long Beach Blvd,None,Lynwood,90262,Los Angeles,-118.2097,33.91821
 Mothers & Babys Nutrition,4269 South Vermont Avenue,None,Los Angeles,90037,Los Angeles,-118.2919,34.00577
@@ -388,9 +389,10 @@ La Vista Market,1168 E 4Th St,None,Long Beach,90802,Los Angeles,-118.1766,33.771
 Lennox Meat Market,10804 S Inglewood Ave,None,Inglewood,90304,Los Angeles,-118.3611,33.93795
 La Mexicana Market,1261 W El Segundo Blvd,None,Gardena,90247,Los Angeles,-118.2984,33.91685
 Downey Supermarket,13240 Woodruff Ave,None,Downey,90242,Los Angeles,-118.1162,33.91045
+Mi Oaxaca Market,3824 Beverly Blvd,None,Los Angeles,90004,Los Angeles,-118.2928,34.07604
 Viva Meat Market,281 East Newburgh Street,None,Azusa,91702,Los Angeles,-117.9056,34.1104
-Camila'S Nutrition,8628 South Central Avenue,None,Los Angeles,90002,Los Angeles,-118.2562,33.9594
-R & G'S Food Basket,14407 Pioneer Blvd,None,Norwalk,90650,Los Angeles,-118.0829,33.90001
+Camila's Nutrition,8628 South Central Avenue,None,Los Angeles,90002,Los Angeles,-118.2562,33.9594
+R & G's Food Basket,14407 Pioneer Blvd,None,Norwalk,90650,Los Angeles,-118.0829,33.90001
 Victoria Market #2,1865 East 97Th Street,None,Los Angeles,90002,Los Angeles,-118.2391,33.94836
 Lucky 16 Market,545 Euclid Ave,None,Los Angeles,90063,Los Angeles,-118.2055,34.03403
 Paloma Meat Market,6531 Rita Ave,None,Huntington Park,90255,Los Angeles,-118.2241,33.97949
@@ -403,7 +405,7 @@ Hoa Binh Rosemead Supermarket,8235 Garvey Ave,None,Rosemead,91770,Los Angeles,-1
 La Bodega Market #4,1420 East Anaheim Street,None,Long Beach,90813,Los Angeles,-118.1739,33.78231
 La Cachanilla #5,1135 N White Ave,None,Pomona,91768,Los Angeles,-117.7596,34.06842
 La Hacienda Meat Market,13305 Prairie Ave,None,Hawthorne,90250,Los Angeles,-118.3441,33.91182
-Baby'S Nutrition Center,7612 California Ave,None,Huntington Park,90255,Los Angeles,-118.2037,33.96812
+Baby's Nutrition Center,7612 California Ave,None,Huntington Park,90255,Los Angeles,-118.2037,33.96812
 Albertsons #108,1735 W Artesia Blvd,None,Gardena,90248,Los Angeles,-118.308,33.87424
 Albertsons #132,101 E Willow St,None,Long Beach,90806,Los Angeles,-118.1922,33.80547
 Albertsons #140,7676 Firestone Blvd,None,Downey,90241,Los Angeles,-118.1445,33.94558
@@ -489,7 +491,6 @@ Ralphs #056,10900 Magnolia Blvd,None,North Hollywood,91601,Los Angeles,-118.3678
 Ralphs #081,21909 Ventura Blvd,None,Woodland Hills,91364,Los Angeles,-118.6039,34.16972
 Ralphs #060,1416 E Colorado St,None,Glendale,91205,Los Angeles,-118.2333,34.14189
 Ralphs #209,8824 Sepulveda Blvd,None,Los Angeles,90045,Los Angeles,-118.3979,33.95625
-Food 4 Less #366,10901 Imperial Hwy,None,Norwalk,90650,Los Angeles,-118.1025,33.91813
 Food 4 Less #363,2750 E First St,None,Los Angeles,90033,Los Angeles,-118.2057,34.04074
 Food 4 Less #360,2341 E Avenue S,None,Palmdale,93550,Los Angeles,-118.0865,34.55968
 Ralphs #210,11727 Olympic Blvd,None,Los Angeles,90064,Los Angeles,-118.4493,34.03498
@@ -558,9 +559,9 @@ Super A Foods #1,5595 Rosemead Blvd,None,Temple City,91780,Los Angeles,-118.0751
 Winco Foods #57,90 Rio Rancho Rd,None,Pomona,91766,Los Angeles,-117.7615,34.02637
 Winco Foods #35,740 West Avenue K-4,None,Lancaster,93534,Los Angeles,-118.145,34.67215
 Winco Foods #107,3400 East South St,None,Lakewood,90805,Los Angeles,-118.1519,33.85878
-Mother'S Nutritional Center #401,3361 Tweedy Blvd,None,South Gate,90280,Los Angeles,-118.2099,33.94489
-Mother'S Nutritional Center #402,7503 Atlantic Blvd Unit B,None,Cudahy,90201,Los Angeles,-118.1884,33.96757
-Mother'S Nutritional Center #405,6501 South Garfield Avenue Unit C,None,Bell Gardens,90201,Los Angeles,-118.1479,33.97308
+Mother's Nutritional Center #401,3361 Tweedy Blvd,None,South Gate,90280,Los Angeles,-118.2099,33.94489
+Mother's Nutritional Center #402,7503 Atlantic Blvd Unit B,None,Cudahy,90201,Los Angeles,-118.1884,33.96757
+Mother's Nutritional Center #405,6501 South Garfield Avenue Unit C,None,Bell Gardens,90201,Los Angeles,-118.1479,33.97308
 Mothers Nutritional Ctr#408,17610 Bellflower Blvd Ste 101,None,Bellflower,90706,Los Angeles,-118.12519,33.872644
 Mothers Nutritional Ctr#412,7026 Rugby Ave,None,Huntington Park,90255,Los Angeles,-118.226507,33.975834
 Mothers Nutritional Ctr#414,10016 E Garvey Ave Unit 4,None,El Monte,91733,Los Angeles,-118.0506,34.06226
@@ -569,11 +570,11 @@ Mothers Nutritional Ctr#417,1319 Long Beach Blvd,None,Long Beach,90813,Los Angel
 Mothers Nutritional Ctr#423,4243 Maine Ave,None,Baldwin Park,91706,Los Angeles,-117.9616,34.08933
 Mothers Nutritional Ctr#421,16000 Paramount Blvd Unit C,None,Paramount,90723,Los Angeles,-118.159975,33.887728
 Mothers Nutritional Ctr#424,3820 Slauson Ave Unit A & B,None,Maywood,90270,Los Angeles,-118.195856,33.987923
-Mother'S Nutritional Center #429,3797 Martin L. King Jr. Blvd,None,Lynwood,90262,Los Angeles,-118.1994,33.92847
-Mother'S Nutritional Center #432,13927 San Antonio Ave,None,Norwalk,90650,Los Angeles,-118.0803,33.90477
+Mother's Nutritional Center #429,3797 Martin L. King Jr. Blvd,None,Lynwood,90262,Los Angeles,-118.1994,33.92847
+Mother's Nutritional Center #432,13927 San Antonio Ave,None,Norwalk,90650,Los Angeles,-118.0803,33.90477
 Mothers Nutritional Ctr#434,2919 E Florence Ave,None,Huntington Park,90255,Los Angeles,-118.216732,33.973343
 Mothers Nutritional Ctr#439,8870 E Whittier Blvd,None,Pico Rivera,90660,Los Angeles,-118.097819,34.007353
-Vallarta Supermarkets #11,21208 Sherman Way,None,Canoga Park,91303,Los Angeles,-118.5949,34.20061
+Mothers Nutritional Ctr#442,22227 Norwalk Blvd,None,Hawaiian Gardens,90716,Los Angeles,-118.0726,33.82623
 Mothers Nutritional Ctr#450,8530 Van Nuys Blvd,None,Panorama City,91402,Los Angeles,-118.448908,34.225507
 Mothers Nutritional Ctr#448,1805 Indian Hill Blvd,None,Pomona,91767,Los Angeles,-117.719665,34.07731
 Mothers Nutritional Ctr#216,14549 Telegraph Rd,None,La Mirada,90638,Los Angeles,-118.0211,33.92359
@@ -584,148 +585,148 @@ Mothers Nutritional Ctr#604,7132 Van Nuys Blvd,None,Van Nuys,91405,Los Angeles,-
 Mothers Nutritional Ctr#606,15212 S Western Ave Ste C,None,Gardena,90249,Los Angeles,-118.309153,33.893226
 Mothers Nutritional Ctr#607,1008 N Citrus Ave,None,Covina,91723,Los Angeles,-117.890198,34.097347
 Mothers Nutritional Ctr#612,13643 Van Nuys Blvd,None,Pacoima,91331,Los Angeles,-118.4303,34.26064
-Mother'S Nutritional Center #236,1900 North Long Beach Blvd Suite 109,None,Compton,90221,Los Angeles,-118.208,33.9087
-Mother'S Nutritional Center #411,3726 Tweedy Blvd,None,South Gate,90280,Los Angeles,-118.2048,33.94323
-Mother'S Nutritional Center #614,943 North La Brea Avenue,None,Inglewood,90302,Los Angeles,-118.3585,33.97575
-Mother'S Nutritional Center #242,1161 North Maclay Avenue,None,San Fernando,91340,Los Angeles,-118.4243,34.29591
-Mother'S Nutritional Center #239,5172 Atlantic Avenue,None,Long Beach,90805,Los Angeles,-118.184,33.8503
-Mother'S Nutritional Center #437,2325 West Whittier Blvd,None,Montebello,90640,Los Angeles,-118.1258,34.01323
+Mother's Nutritional Center #236,1900 North Long Beach Blvd Suite 109,None,Compton,90221,Los Angeles,-118.208,33.9087
+Mother's Nutritional Center #411,3726 Tweedy Blvd,None,South Gate,90280,Los Angeles,-118.2048,33.94323
+Mother's Nutritional Center #614,943 North La Brea Avenue,None,Inglewood,90302,Los Angeles,-118.3585,33.97575
+Mother's Nutritional Center #242,1161 North Maclay Avenue,None,San Fernando,91340,Los Angeles,-118.4243,34.29591
+Mother's Nutritional Center #239,5172 Atlantic Avenue,None,Long Beach,90805,Los Angeles,-118.184,33.8503
+Mother's Nutritional Center #437,2325 West Whittier Blvd,None,Montebello,90640,Los Angeles,-118.1258,34.01323
 Supermercado Vallarta #8,9136 Sepulveda Blvd,None,North Hills,91343,Los Angeles,-118.4664,34.23658
 Vallarta Supermarket #26,9011 Woodman Ave,None,Arleta,91331,Los Angeles,-118.4396,34.23321
+Union Plaza Market,1629 W 6Th St,None,Los Angeles,90017,Los Angeles,-118.2696,34.05734
 Vallarta Supermarkets #4,440 E Palmdale Blvd,None,Palmdale,93550,Los Angeles,-118.1224,34.57915
 Vallarta Supermarkets #9,10859 Oxnard St,None,North Hollywood,91606,Los Angeles,-118.3677,34.18026
 El Super #01,5702 Firestone Blvd,None,South Gate,90280,Los Angeles,-118.1684,33.94808
 El Super #02,14620 Parthenia St,None,Panorama City,91402,Los Angeles,-118.4513,34.22631
 El Super #03,5646 Whittier Blvd,None,Commerce,90022,Los Angeles,-118.1491,34.01755
+El Super #05,12727 Sherman Way,None,North Hollywood,91605,Los Angeles,-118.4107,34.2025
 Los 3 Potrillos Carniceria,14920 Victory Blvd,None,Van Nuys,91411,Los Angeles,-118.4581,34.18642
 Carniceria Los Potrillos #2,6201 Kester Avenue,None,Van Nuys,91411,Los Angeles,-118.4577,34.18274
 Los Novillos Vermont,14114 S. Vermont Ave,None,Gardena,90247,Los Angeles,-118.2912,33.9035
-Los Novillos Market,11805  Atlantic Ave,None,Lynwood,90262,Los Angeles,-118.1904,33.91494
 Vons #2254,311 W Los Feliz Blvd,None,Glendale,91204,Los Angeles,-118.258507,34.128637
+Los Novillos Market,11805  Atlantic Ave,None,Lynwood,90262,Los Angeles,-118.1904,33.91494
+Big Saver Foods #02,5168 S Huntington Dr,None,Los Angeles,90032,Los Angeles,-118.1699,34.08898
 La Blanquita,4136 East Cesar E. Chavez Avenue,None,Los Angeles,90063,Los Angeles,-118.1769,34.04035
 Super King Market #2,2716 N San Fernando Rd,None,Los Angeles,90065,Los Angeles,-118.2431,34.10963
-Big Saver Foods #02,5168 S Huntington Dr,None,Los Angeles,90032,Los Angeles,-118.1699,34.08898
 Smart & Final #735,1833 S La Cienega Blvd,None,Los Angeles,90035,Los Angeles,-118.377,34.04363
 Smart & Final #470,2929 Crenshaw Blvd,None,Los Angeles,90016,Los Angeles,-118.3355,34.02814
 La Bodega #3,2715 S Western Ave Ste D,None,Los Angeles,90018,Los Angeles,-118.3092,34.0304
-Vons #2270,4030 Centinela Ave,None,Los Angeles,90066,Los Angeles,-118.428747,33.998909
-Union Plaza Market,1629 W 6Th St,None,Los Angeles,90017,Los Angeles,-118.2696,34.05734
 Numero Uno Rancho Market #6,4225 Montclair St,None,Los Angeles,90018,Los Angeles,-118.3319,34.0318
-Vons #2077,3118 S Sepulveda Blvd,None,Los Angeles,90034,Los Angeles,-118.427268,34.02664
-Jon'S Marketplace #11,1601 N Vermont Ave,None,Los Angeles,90027,Los Angeles,-118.292,34.10045
-R-Ranch Market #14,5212 W Adams Blvd,None,Los Angeles,90016,Los Angeles,-118.356,34.03182
-Pavilions #2229,727 N Vine St,None,Los Angeles,90038,Los Angeles,-118.327203,34.084528
-La Campanita Meat Market,1653 W Washington Blvd,None,Los Angeles,90007,Los Angeles,-118.2931,34.04042
-Little Farmers Market,619 S Atlantic Blvd,None,Los Angeles,90022,Los Angeles,-118.1564,34.02436
-Jon'S Market #03,3334 W 8Th St,None,Los Angeles,90005,Los Angeles,-118.3014,34.05748
-Mi Oaxaca Market,3824 Beverly Blvd,None,Los Angeles,90004,Los Angeles,-118.2928,34.07604
+Vons #2270,4030 Centinela Ave,None,Los Angeles,90066,Los Angeles,-118.428747,33.998909
 Numero Uno Market #101,701 E Jefferson Blvd,None,Los Angeles,90011,Los Angeles,-118.2646,34.01541
+Pavilions #2229,727 N Vine St,None,Los Angeles,90038,Los Angeles,-118.327203,34.084528
+Jon's Marketplace #11,1601 N Vermont Ave,None,Los Angeles,90027,Los Angeles,-118.292,34.10045
+Vons #2077,3118 S Sepulveda Blvd,None,Los Angeles,90034,Los Angeles,-118.427268,34.02664
 Numero Uno Market #102,1309 S Alvarado St,None,Los Angeles,90006,Los Angeles,-118.2837,34.04641
+Little Farmers Market,619 S Atlantic Blvd,None,Los Angeles,90022,Los Angeles,-118.1564,34.02436
+Jon's Market #03,3334 W 8Th St,None,Los Angeles,90005,Los Angeles,-118.3014,34.05748
 Mothers Nutritional Ctr#446,4222 W Beverly Blvd,None,Los Angeles,90004,Los Angeles,-118.3013,34.07593
-El Recreo Market,2501 W Temple St,None,Los Angeles,90026,Los Angeles,-118.2736,34.07231
-El Rancho Market,960 N. Vine St,None,Los Angeles,90038,Los Angeles,-118.3262,34.08834
-Mothers Nutritional Ctr#407,423 E Florence Ave,None,Los Angeles,90003,Los Angeles,-118.2667,33.97501
-El Super #13,1301 E Gage Ave,None,Los Angeles,90001,Los Angeles,-118.2517,33.9826
-Jon'S Marketplace #07,5311 Santa Monica Blvd,None,Los Angeles,90029,Los Angeles,-118.3049,34.09113
-Smart & Final #363,939 N Western Ave,None,Los Angeles,90029,Los Angeles,-118.3096,34.08793
-Jay'S Market,4000 W Pico Blvd,None,Los Angeles,90019,Los Angeles,-118.3236,34.0466
-Prime Time Nutrition #7,1311 Glendale Blvd Unit F,None,Los Angeles,90026,Los Angeles,-118.2607,34.07891
-Vons #3263,1342 N Alvarado St,None,Los Angeles,90027,Los Angeles,-118.261286,34.079495
+La Campanita Meat Market,1653 W Washington Blvd,None,Los Angeles,90007,Los Angeles,-118.2931,34.04042
+R-Ranch Market #14,5212 W Adams Blvd,None,Los Angeles,90016,Los Angeles,-118.356,34.03182
 Big Saver Foods #05,5829 S Compton Ave,None,Los Angeles,90001,Los Angeles,-118.248,33.98896
 Mothers Nutritional Ctr#418,3665 Crenshaw Blvd,None,Los Angeles,90016,Los Angeles,-118.335177,34.020979
+El Rancho Market,960 N. Vine St,None,Los Angeles,90038,Los Angeles,-118.3262,34.08834
+Jay's Market,4000 W Pico Blvd,None,Los Angeles,90019,Los Angeles,-118.3236,34.0466
 Maravilla Meat Market,4732 East Cesar East Chavez Avenue,None,Los Angeles,90022,Los Angeles,-118.1635,34.0403
-Vons #2100,9860 National Blvd,None,Los Angeles,90034,Los Angeles,-118.4014,34.03019
+El Recreo Market,2501 W Temple St,None,Los Angeles,90026,Los Angeles,-118.2736,34.07231
+Smart & Final #363,939 N Western Ave,None,Los Angeles,90029,Los Angeles,-118.3096,34.08793
+El Super #13,1301 E Gage Ave,None,Los Angeles,90001,Los Angeles,-118.2517,33.9826
+Jon's Marketplace #07,5311 Santa Monica Blvd,None,Los Angeles,90029,Los Angeles,-118.3049,34.09113
+Mothers Nutritional Ctr#407,423 E Florence Ave,None,Los Angeles,90003,Los Angeles,-118.2667,33.97501
+Prime Time Nutrition #7,1311 Glendale Blvd Unit F,None,Los Angeles,90026,Los Angeles,-118.2607,34.07891
+Vons #3263,1342 N Alvarado St,None,Los Angeles,90027,Los Angeles,-118.261286,34.079495
+Lee's Market,4801 Avalon Blvd,None,Los Angeles,90011,Los Angeles,-118.2655,33.99961
 El Super #500,8601 Hooper Ave,None,Los Angeles,90002,Los Angeles,-118.2548,33.95988
-El Super #18,5610 York Blvd,None,Los Angeles,90042,Los Angeles,-118.1963,34.11857
-Smart & Final #330,10113 Venice Blvd,None,Los Angeles,90034,Los Angeles,-118.4018,34.0221
-Lee'S Market,4801 Avalon Blvd,None,Los Angeles,90011,Los Angeles,-118.2655,33.99961
-Smart & Final #315,12210 Santa Monica Blvd,None,West Los Angeles,90025,Los Angeles,-118.4644,34.0398
 Luis Meat Market,4253 S Vermont Ave,None,Los Angeles,90037,Los Angeles,-118.2916,34.00624
+Vons #2100,9860 National Blvd,None,Los Angeles,90034,Los Angeles,-118.4014,34.03019
+Smart & Final #315,12210 Santa Monica Blvd,None,West Los Angeles,90025,Los Angeles,-118.4644,34.0398
+Smart & Final #330,10113 Venice Blvd,None,Los Angeles,90034,Los Angeles,-118.4018,34.0221
+El Super #18,5610 York Blvd,None,Los Angeles,90042,Los Angeles,-118.1963,34.11857
 Vallarta Supermarkets #25,3425 Whittier Blvd,None,Los Angeles,90023,Los Angeles,-118.2001,34.02779
 San Diego Market,1131 S Union Ave,None,Los Angeles,90015,Los Angeles,-118.2758,34.04691
 Prime Time Nutrition #11,5930 Santa Monica Blvd,None,Los Angeles,90038,Los Angeles,-118.3188,34.09047
 Smart & Final #345,2308 E 4Th St,None,Los Angeles,90033,Los Angeles,-118.2131,34.04063
 Mercado Hidalgo,4101 City Terrace Dr,None,Los Angeles,90063,Los Angeles,-118.1776,34.05597
-Advance Food Market,5469 W Adams Blvd,None,Los Angeles,90016,Los Angeles,-118.362,34.03274
 Albertsons #4131,3901 Crenshaw Blvd,None,Los Angeles,90008,Los Angeles,-118.3358,34.01406
+Advance Food Market,5469 W Adams Blvd,None,Los Angeles,90016,Los Angeles,-118.362,34.03274
 Bellamar Market #2,1429 W 3Rd St,None,Los Angeles,90017,Los Angeles,-118.2624,34.05885
 El Potrillo Market,4151 W 3Rd St,Suite #D,Los Angeles,90020,Los Angeles,-118.3043,34.06932
 Nueva Corona Market,1913 East 1St Street,None,Los Angeles,90033,Los Angeles,-118.2168,34.04658
 El Caney Meat Market,4600 Maplewood Ave,None,Los Angeles,90004,Los Angeles,-118.3048,34.07973
-Family Fresh Nutritional Center,1706 S. Western Ave,None,Los Angeles,90006,Los Angeles,-118.3086,34.04249
 Smart & Final #484,845 S Figueroa St Ste 100,None,Los Angeles,90017,Los Angeles,-118.2628,34.04757
 Laguna Market,2125 W 6Th St,None,Los Angeles,90057,Los Angeles,-118.2755,34.06002
 Mothers Nutritional Ctr#452,4311 N Figueroa St,None,Los Angeles,90065,Los Angeles,-118.208211,34.094859
+Family Fresh Nutritional Center,1706 S. Western Ave,None,Los Angeles,90006,Los Angeles,-118.3086,34.04249
 Target Store T-2776,735 S Figueroa St,None,Los Angeles,90017,Los Angeles,-118.2612,34.04902
 Big Saver Foods #01,3000 N Broadway,None,Los Angeles,90031,Los Angeles,-118.2102,34.07344
-Smart & Final #444,4550 W Pico Blvd Ste D303,None,Los Angeles,90019,Los Angeles,-118.3356,34.04787
-La Fortuna Meat Market,3200 S Central Ave,None,Los Angeles,90011,Los Angeles,-118.2564,34.0135
-Centro Mercado Latino,4339 Dalton Ave,None,Los Angeles,90062,Los Angeles,-118.3037,34.00399
-Payless Foods #10,620 E El Segundo Blvd,None,Los Angeles,90059,Los Angeles,-118.2646,33.91511
-Smart & Final #395,11221 W Pico Blvd,None,Los Angeles,90064,Los Angeles,-118.4376,34.03663
-"Placita Market La Oaxaquena, Inc.",2880 W 7Th St,None,Los Angeles,90005,Los Angeles,-118.2863,34.05965
-Los Angeles Sfb Commissary,483 N Aviation Blvd Bldg 251,None,El Segundo,90245,Los Angeles,-118.3812,33.91904
 Numero Uno Market #119,4831 Whittier Blvd,None,Los Angeles,90022,Los Angeles,-118.1636,34.02214
-El Super #04,3405 E Cesar E Chavez Ave,None,Los Angeles,90063,Los Angeles,-118.1919,34.04154
-Vons #2268,1430 S Fairfax Ave,None,Los Angeles,90019,Los Angeles,-118.3662,34.05054
-Baby Nutritional Center,3871 Whittier Boulevard,None,Los Angeles,90023,Los Angeles,-118.1899,34.02414
-Vons #2665,4520 W Sunset Blvd,None,Los Angeles,90027,Los Angeles,-118.288269,34.098157
-Baby Nutrition #2,1967 W Slauson Ave Ste 101/102,None,Los Angeles,90047,Los Angeles,-118.3133,33.98943
-51St Market,5026 S Avalon Blvd,None,Los Angeles,90011,Los Angeles,-118.2647,33.99687
-Mothers Nutritional Ctr#211,4110 S Figueroa St,None,Los Angeles,90037,Los Angeles,-118.2825,34.00875
-Smart & Final #456,3607 S Vermont Ave,None,Los Angeles,90007,Los Angeles,-118.2922,34.02278
-Hooper Market,2339 Hooper Ave,None,Los Angeles,90011,Los Angeles,-118.2495,34.0176
-Numero Uno Market #110,1831 W 3Rd St,None,Los Angeles,90057,Los Angeles,-118.2694,34.06243
-Mothers Nutritional Ctr#202,260 E Manchester Blvd Unit A&B,None,Los Angeles,90003,Los Angeles,-118.3526,33.96177
-Jon'S Marketplace #1,3667 W Third St,None,Los Angeles,90020,Los Angeles,-118.2961,34.06933
-Numero Uno Market #105,2226 S San Pedro St,None,Los Angeles,90011,Los Angeles,-118.2595,34.0241
-Smart & Final #364,2949 W Pico Blvd,None,Los Angeles,90006,Los Angeles,-118.3048,34.04755
 Mothers Nutritional Ctr#232,424 E Washington Blvd,None,Los Angeles,90015,Los Angeles,-118.261,34.02877
-Chivas Farm Market,7902 S Broadway,None,Los Angeles,90003,Los Angeles,-118.278,33.96775
-Smart & Final #310,1216 Compton Ave,None,Los Angeles,90021,Los Angeles,-118.2418,34.02736
-Numero Uno Market #103,9127 S Figueroa St,None,Los Angeles,90003,Los Angeles,-118.2832,33.9535
-Garcia Mini Market#2,4050 South Broadway Place,None,Los Angeles,90037,Los Angeles,-118.2779,34.00992
-Mothers Nutritional Ctr#608,1605 W Washington Blvd,None,Los Angeles,90006,Los Angeles,-118.292459,34.039999
-Whittier Nutrition,4962 Whittier Boulevard,None,East Los Angeles,90022,Los Angeles,-118.1623,34.02132
+"Placita Market La Oaxaquena, Inc.",2880 W 7Th St,None,Los Angeles,90005,Los Angeles,-118.2863,34.05965
 La Poblana Meat Market,5111 East Olympic Blvd,None,Los Angeles,90022,Los Angeles,-118.1605,34.01693
-Smart & Final #823,9850 S. Laurel St,None,Los Angeles,90002,Los Angeles,-118.2302,33.94762
+Smart & Final #444,4550 W Pico Blvd Ste D303,None,Los Angeles,90019,Los Angeles,-118.3356,34.04787
+Numero Uno Market #110,1831 W 3Rd St,None,Los Angeles,90057,Los Angeles,-118.2694,34.06243
+Hooper Market,2339 Hooper Ave,None,Los Angeles,90011,Los Angeles,-118.2495,34.0176
+La Fortuna Meat Market,3200 S Central Ave,None,Los Angeles,90011,Los Angeles,-118.2564,34.0135
 Oasis Market,4312 Wall St,None,Los Angeles,90011,Los Angeles,-118.2714,34.00527
+Centro Mercado Latino,4339 Dalton Ave,None,Los Angeles,90062,Los Angeles,-118.3037,34.00399
+Smart & Final #456,3607 S Vermont Ave,None,Los Angeles,90007,Los Angeles,-118.2922,34.02278
+Chivas Farm Market,7902 S Broadway,None,Los Angeles,90003,Los Angeles,-118.278,33.96775
+Smart & Final #823,9850 S. Laurel St,None,Los Angeles,90002,Los Angeles,-118.2302,33.94762
+Vons #2268,1430 S Fairfax Ave,None,Los Angeles,90019,Los Angeles,-118.3662,34.05054
+Vons #2665,4520 W Sunset Blvd,None,Los Angeles,90027,Los Angeles,-118.288269,34.098157
+Mothers Nutritional Ctr#608,1605 W Washington Blvd,None,Los Angeles,90006,Los Angeles,-118.292459,34.039999
+Smart & Final #364,2949 W Pico Blvd,None,Los Angeles,90006,Los Angeles,-118.3048,34.04755
+51St Market,5026 S Avalon Blvd,None,Los Angeles,90011,Los Angeles,-118.2647,33.99687
+Jon's Marketplace #1,3667 W Third St,None,Los Angeles,90020,Los Angeles,-118.2961,34.06933
+Baby Nutrition #2,1967 W Slauson Ave Ste 101/102,None,Los Angeles,90047,Los Angeles,-118.3133,33.98943
+Numero Uno Market #105,2226 S San Pedro St,None,Los Angeles,90011,Los Angeles,-118.2595,34.0241
+Los Angeles Sfb Commissary,483 N Aviation Blvd Bldg 251,None,El Segundo,90245,Los Angeles,-118.3812,33.91904
+Mothers Nutritional Ctr#211,4110 S Figueroa St,None,Los Angeles,90037,Los Angeles,-118.2825,34.00875
+Payless Foods #10,620 E El Segundo Blvd,None,Los Angeles,90059,Los Angeles,-118.2646,33.91511
+Garcia Mini Market#2,4050 South Broadway Place,None,Los Angeles,90037,Los Angeles,-118.2779,34.00992
+Mothers Nutritional Ctr#202,260 E Manchester Blvd Unit A&B,None,Los Angeles,90003,Los Angeles,-118.3526,33.96177
+Numero Uno Market #103,9127 S Figueroa St,None,Los Angeles,90003,Los Angeles,-118.2832,33.9535
+Baby Nutritional Center,3871 Whittier Boulevard,None,Los Angeles,90023,Los Angeles,-118.1899,34.02414
+Whittier Nutrition,4962 Whittier Boulevard,None,East Los Angeles,90022,Los Angeles,-118.1623,34.02132
+Smart & Final #310,1216 Compton Ave,None,Los Angeles,90021,Los Angeles,-118.2418,34.02736
+El Super #04,3405 E Cesar E Chavez Ave,None,Los Angeles,90063,Los Angeles,-118.1919,34.04154
+Smart & Final #395,11221 W Pico Blvd,None,Los Angeles,90064,Los Angeles,-118.4376,34.03663
+Corona Ranch Market,5903 S Main St,None,Los Angeles,90003,Los Angeles,-118.2742,33.98681
+Mothers Nutritional Ctr#610,4100 W Pico Blvd Ste 1 & 2,None,Los Angeles,90019,Los Angeles,-118.201906,34.018023
+Baby's World Nutrition #2,804 S. Alvarado St,None,Los Angeles,90057,Los Angeles,-118.2778,34.05457
+Calimex Family Market,6604 N Figueroa St,None,Los Angeles,90042,Los Angeles,-118.1845,34.12236
+El Super #58,310 E Florence Ave,None,Los Angeles,90003,Los Angeles,-118.2683,33.97446
+Happy's Liquor,825  N Virgil Ave,None,Los Angeles,90029,Los Angeles,-118.2871,34.08643
+Mothers Nutritional Ctr#435,1985 W Adams Blvd Unit 104,None,Los Angeles,90018,Los Angeles,-118.308248,34.033252
+El Super #501,7220 S Vermont Ave,None,Los Angeles,90044,Los Angeles,-118.2912,33.9739
 "Don Panchito Market, Inc.",6015 Avalon Blvd,None,Los Angeles,90003,Los Angeles,-118.2654,33.98466
-Mothers Nutritional Ctr#447,1350 E Florence Ave,None,Los Angeles,90001,Los Angeles,-118.2501,33.97455
-Best Market,4275 S. Hoover St,None,Los Angeles,90037,Los Angeles,-118.2875,34.00569
-Smart & Final #459,2720 Beverly Blvd,None,Los Angeles,90057,Los Angeles,-118.2783,34.06985
+Smart & Final #371,5555 Wilshire Blvd,None,Los Angeles,90036,Los Angeles,-118.3496,34.0627
+Baby's World Nutrtion Center,8320  Compton Ave,None,Los Angeles,90001,Los Angeles,-118.2471,33.96254
+Bellamar Market,2607 W 6Th St,None,Los Angeles,90057,Los Angeles,-118.2806,34.06231
+El Super #17,1100 W Slauson Ave,None,Los Angeles,90044,Los Angeles,-118.2933,33.989
 Smart & Final #341,1125 E El Segundo Blvd,None,Los Angeles,90059,Los Angeles,-118.2548,33.91693
-Smart & Final #337,8137 S Vermont Street,None,Los Angeles,90044,Los Angeles,-118.2922,33.96475
-Mercado El Oaxaqueno,263 S Alexandria Ave,None,Los Angeles,90004,Los Angeles,-118.2983,34.06924
+Mothers Nutritional Ctr#443,6224 S Vermont Ave,None,Los Angeles,90044,Los Angeles,-118.291127,33.983039
+Best Market,4275 S. Hoover St,None,Los Angeles,90037,Los Angeles,-118.2875,34.00569
 Numero Uno Market #108,4373 S Vermont Ave,None,Los Angeles,90037,Los Angeles,-118.2924,34.00407
-Super Mercado Latino Market,1049 W. Martin Luther King Jr Blvd,None,Los Angeles,90037,Los Angeles,-118.2934,34.01125
-Super A Foods #11,5250 York Blvd,None,Los Angeles,90042,Los Angeles,-118.2012,34.11974
+Uno Produce Market,4100 S Broadway,None,Los Angeles,90037,Los Angeles,-118.2781,34.00881
 Circle H Markets,3131 N San Fernando Rd,None,Los Angeles,90065,Los Angeles,-118.2465,34.11594
 Circle H Markets,2511 W Sunset Blvd,None,Los Angeles,90026,Los Angeles,-118.2693,34.08
 Mothers Nutritional Ctr#209,700 W Imperial Hwy Unit 104,None,Los Angeles,90044,Los Angeles,-118.2874,33.93045
-Country Ranch Market,2800 Beverly Blvd,None,Los Angeles,90057,Los Angeles,-118.2793,34.07031
-Venice Market,1339  Venice Blvd,None,Los Angeles,90006,Los Angeles,-118.2832,34.04358
-El Super #17,1100 W Slauson Ave,None,Los Angeles,90044,Los Angeles,-118.2933,33.989
-Smart & Final #371,5555 Wilshire Blvd,None,Los Angeles,90036,Los Angeles,-118.3496,34.0627
-Uno Produce Market,4100 S Broadway,None,Los Angeles,90037,Los Angeles,-118.2781,34.00881
-El Migueleno Mini Market,2688 W Pico Blvd,None,Los Angeles,90006,Los Angeles,-118.2972,34.04712
-Victoria Market,11149 S Vermont St,None,Los Angeles,90044,Los Angeles,-118.2922,33.93346
-Numero Uno Market #107,4710 S Broadway,None,Los Angeles,90037,Los Angeles,-118.278,34.00072
-Numero Uno Market #104,310 E Manchester Ave,None,Los Angeles,90003,Los Angeles,-118.2685,33.95984
+Mercado El Oaxaqueno,263 S Alexandria Ave,None,Los Angeles,90004,Los Angeles,-118.2983,34.06924
+Smart & Final #459,2720 Beverly Blvd,None,Los Angeles,90057,Los Angeles,-118.2783,34.06985
 Super A Foods #7,2925 Division St,None,Los Angeles,90065,Los Angeles,-118.2358,34.10345
+Numero Uno Market #107,4710 S Broadway,None,Los Angeles,90037,Los Angeles,-118.278,34.00072
+Mothers Nutritional Ctr#447,1350 E Florence Ave,None,Los Angeles,90001,Los Angeles,-118.2501,33.97455
+Mommy's Nutritional Center #12,271 & 273 S Atlantic Blvd Ste B & A,None,Los Angeles,90022,Los Angeles,-118.154034,34.032987
+Smart & Final #337,8137 S Vermont Street,None,Los Angeles,90044,Los Angeles,-118.2922,33.96475
+Country Ranch Market,2800 Beverly Blvd,None,Los Angeles,90057,Los Angeles,-118.2793,34.07031
+Super Mercado Latino Market,1049 W. Martin Luther King Jr Blvd,None,Los Angeles,90037,Los Angeles,-118.2934,34.01125
+Mother's Nutritional Center #235,10223 S Central Ave,None,Los Angeles,90002,Los Angeles,-118.2544,33.94349
+Venice Market,1339  Venice Blvd,None,Los Angeles,90006,Los Angeles,-118.2832,34.04358
+Numero Uno Market #104,310 E Manchester Ave,None,Los Angeles,90003,Los Angeles,-118.2685,33.95984
+El Migueleno Mini Market,2688 W Pico Blvd,None,Los Angeles,90006,Los Angeles,-118.2972,34.04712
 Mothers Nutritional Ctr#430,4353 S Central Ave,None,Los Angeles,90011,Los Angeles,-118.256488,34.004794
-El Super #58,310 E Florence Ave,None,Los Angeles,90003,Los Angeles,-118.2683,33.97446
-Baby'S World Nutrtion Center,8320  Compton Ave,None,Los Angeles,90001,Los Angeles,-118.2471,33.96254
-El Super #501,7220 S Vermont Ave,None,Los Angeles,90044,Los Angeles,-118.2912,33.9739
-Mothers Nutritional Ctr#435,1985 W Adams Blvd Unit 104,None,Los Angeles,90018,Los Angeles,-118.308248,34.033252
-Mothers Nutritional Ctr#610,4100 W Pico Blvd Ste 1 & 2,None,Los Angeles,90019,Los Angeles,-118.201906,34.018023
+Victoria Market,11149 S Vermont St,None,Los Angeles,90044,Los Angeles,-118.2922,33.93346
+Angelino's Nutrition,4919 S Hooper Ave,None,Los Angeles,90011,Los Angeles,-118.2523,33.99833
+Super A Foods #11,5250 York Blvd,None,Los Angeles,90042,Los Angeles,-118.2012,34.11974
 Osi Foodmart,601 N Virgil Ave,None,Los Angeles,90004,Los Angeles,-118.287,34.08192
-Corona Ranch Market,5903 S Main St,None,Los Angeles,90003,Los Angeles,-118.2742,33.98681
-Mother'S Nutritional Center #235,10223 S Central Ave,None,Los Angeles,90002,Los Angeles,-118.2544,33.94349
-Calimex Family Market,6604 N Figueroa St,None,Los Angeles,90042,Los Angeles,-118.1845,34.12236
-Baby'S World Nutrition #2,804 S. Alvarado St,None,Los Angeles,90057,Los Angeles,-118.2778,34.05457
-Angelino'S Nutrition,4919 S Hooper Ave,None,Los Angeles,90011,Los Angeles,-118.2523,33.99833
-Bellamar Market,2607 W 6Th St,None,Los Angeles,90057,Los Angeles,-118.2806,34.06231
-Happy'S Liquor,825  N Virgil Ave,None,Los Angeles,90029,Los Angeles,-118.2871,34.08643
-Mommy'S Nutritional Center #12,271 & 273 S Atlantic Blvd Ste B & A,None,Los Angeles,90022,Los Angeles,-118.154034,34.032987
-Mothers Nutritional Ctr#443,6224 S Vermont Ave,None,Los Angeles,90044,Los Angeles,-118.291127,33.983039

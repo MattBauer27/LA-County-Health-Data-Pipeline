@@ -14,6 +14,7 @@ import datetime
 import json
 import urllib.request
 from xml.etree import ElementTree as ET
+import re
 
 load_dotenv()
 
@@ -37,6 +38,9 @@ logger.addHandler(fh)
 logger.addHandler(ch)
 
 try:
+
+    def correct_titlecase(s):
+        return re.sub(r"\b'\w", lambda x: x.group().lower(), s.title())
 
     # Initialize the GIS
     gis_insp = GIS("https://uscssi.maps.arcgis.com",
@@ -149,9 +153,9 @@ try:
 
         # Convert all string columns to title case
         for col in new_records_df.columns:
-            # If the column is a string column and not 'Longitude' or 'Latitude'
             if new_records_df[col].dtype == 'object' and col not in ['Longitude', 'Latitude']:
-                new_records_df[col] = new_records_df[col].str.title()
+                new_records_df[col] = new_records_df[col].apply(
+                    correct_titlecase)
 
         new_records_df.to_csv(
             f"WIC_Food_Retailers/Base_csvs/wic_food_retailers_{updated_date}.csv", index=False, encoding='utf-8')
@@ -220,8 +224,8 @@ try:
 
                 # Create a dictionary where keys are composite keys (FACILITY_ID, FACILITY_NAME, FACILITY_ADDRESS) and
                 # values are (LATITUDE, LONGITUDE) tuples
-                location_dict = {f"{row['Vendor']}_{row['Address']}": (row['geometry'].y, row['geometry'].x)
-                                 for _, row in previous_gdf.iterrows()}
+                location_dict = {f"{row['Vendor']}_{row['Address']}": (
+                    row['geometry'].y, row['geometry'].x) for _, row in previous_gdf.iterrows() if row['geometry'] is not None}
 
         # Transform DataFrame to GeoDataFrame
         geometry = [Point(xy) for xy in zip(
