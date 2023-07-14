@@ -156,14 +156,14 @@ try:
             new_records_df_insp = new_records_df_insp.astype(str)
 
             # Dataframe for rows present in new_records_df but not in old_records_df
-            df_added_insp = new_records_df_insp[~new_records_df_insp.apply(
-                tuple, 1).isin(old_records_df_insp.apply(tuple, 1))]
+            df_added_insp = new_records_df_insp[~new_records_df_insp[['ACTIVITY_DATE', 'OWNER_ID', 'OWNER_NAME', 'FACILITY_ID']].apply(
+                tuple, 1).isin(old_records_df_insp[['ACTIVITY_DATE', 'OWNER_ID', 'OWNER_NAME', 'FACILITY_ID']].apply(tuple, 1))]
             df_added_insp.to_csv(
                 f"Food_Retailers/Added/Inspections/food_retailers_insp_added_{last_update_date_insp}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
-            df_dropped_insp = old_records_df_insp[~old_records_df_insp.apply(
-                tuple, 1).isin(new_records_df_insp.apply(tuple, 1))]
+            df_dropped_insp = old_records_df_insp[~old_records_df_insp[['ACTIVITY_DATE', 'OWNER_ID', 'OWNER_NAME', 'FACILITY_ID']].apply(
+                tuple, 1).isin(new_records_df_insp[['ACTIVITY_DATE', 'OWNER_ID', 'OWNER_NAME', 'FACILITY_ID']].apply(tuple, 1))]
             df_dropped_insp.to_csv(
                 f"Food_Retailers/Dropped/Inspections/food_retailers_insp_dropped_{last_update_date_insp}.csv", index=False, encoding='utf-8')
 
@@ -224,14 +224,14 @@ try:
             new_records_df_loc = new_records_df_loc.astype(str)
 
             # Dataframe for rows present in new_records_df but not in old_records_df
-            df_added_loc = new_records_df_loc[~new_records_df_loc.apply(
-                tuple, 1).isin(old_records_df_loc.apply(tuple, 1))]
+            df_added_loc = new_records_df_loc[~new_records_df_loc[['FACILITY_ID', 'FACILITY_NAME']].apply(
+                tuple, 1).isin(old_records_df_loc[['FACILITY_ID', 'FACILITY_NAME']].apply(tuple, 1))]
             df_added_loc.to_csv(
                 f"Food_Retailers/Added/Locations/food_retailers_loc_added_{last_update_date_loc}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
-            df_dropped_loc = old_records_df_loc[~old_records_df_loc.apply(
-                tuple, 1).isin(new_records_df_loc.apply(tuple, 1))]
+            df_dropped_loc = old_records_df_loc[~old_records_df_loc[['FACILITY_ID', 'FACILITY_NAME']].apply(
+                tuple, 1).isin(new_records_df_loc[['FACILITY_ID', 'FACILITY_NAME']].apply(tuple, 1))]
             df_dropped_loc.to_csv(
                 f"Food_Retailers/Dropped/Locations/food_retailers_loc_dropped_{last_update_date_loc}.csv", index=False, encoding='utf-8')
 
@@ -310,14 +310,14 @@ try:
                 merged_df = merged_df.astype(str)
 
                 # Dataframe for rows present in new_records_df but not in old_records_df
-                df_added_merged = merged_df[~merged_df.apply(
-                    tuple, 1).isin(old_records_df_merged.apply(tuple, 1))]
+                df_added_merged = merged_df[~merged_df['FACILITY_ID'].isin(
+                    old_records_df_merged['FACILITY_ID'])]
                 df_added_merged.to_csv(
                     f"Food_Retailers/Added/Combined/food_retailers_com_added_{update_date}.csv", index=False, encoding='utf-8')
 
                 # Dataframe for rows present in old_records_df but not in new_records_df
-                df_dropped_merged = old_records_df_merged[~old_records_df_merged.apply(
-                    tuple, 1).isin(merged_df.apply(tuple, 1))]
+                df_dropped_merged = old_records_df_merged[~old_records_df_merged['FACILITY_ID'].isin(
+                    merged_df['FACILITY_ID'])]
                 df_dropped_merged.to_csv(
                     f"Food_Retailers/Dropped/Combined/food_retailers_com_dropped_{update_date}.csv", index=False, encoding='utf-8')
 

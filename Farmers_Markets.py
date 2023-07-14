@@ -181,7 +181,29 @@ try:
 
         new_records_df = new_records_df.fillna('None')
 
-        # CONTINUE CONNTINUE
+        # Remove duplicates
+        new_records_df = new_records_df.drop_duplicates(keep='last')
+
+        # Define a geocoding function
+        def geocode_address(address):
+            # Geocode the address
+            geocode_result = geocode(address, as_featureset=False)
+
+            # If a result was found, return the first result's latitude and longitude
+            if geocode_result:
+                return geocode_result[0]['location']['y'], geocode_result[0]['location']['x']
+
+            # If no result was found, return None
+            return None, None
+
+        # Geocode 'Market Location' to get 'Latitude' and 'Longitude'
+        new_records_df['Latitude'], new_records_df['Longitude'] = zip(
+            *new_records_df['Market Location'].apply(geocode_address))
+
+        new_records_df = new_records_df.fillna('None')
+
+        new_records_df.replace('', 'None', inplace=True)
+
         new_records_df.to_csv(
             f"Farmers_Markets/Base_csvs/farmers_markets_{updated_date}.csv", index=False, encoding='utf-8')
         if last_recorded_dates:
@@ -194,14 +216,14 @@ try:
             new_records_df = new_records_df.astype(str)
 
             # Dataframe for rows present in new_records_df but not in old_records_df
-            df_added = new_records_df[~new_records_df.apply(
-                tuple, 1).isin(old_records_df.apply(tuple, 1))]
+            df_added = new_records_df[~new_records_df['Market Name'].isin(
+                old_records_df['Market Name'])]
             df_added.to_csv(
                 f"Farmers_Markets/Added/farmers_markets_added_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
-            df_dropped = old_records_df[~old_records_df.apply(
-                tuple, 1).isin(new_records_df.apply(tuple, 1))]
+            df_dropped = old_records_df[~old_records_df['Market Name'].isin(
+                new_records_df['Market Name'])]
             df_dropped.to_csv(
                 f"Farmers_Markets/Dropped/farmers_markets_dropped_{updated_date}.csv", index=False, encoding='utf-8')
 
@@ -247,7 +269,7 @@ try:
             if os.path.isfile(previous_geojson_file):
                 previous_gdf = gpd.read_file(previous_geojson_file)
                 location_dict = {f"{row['Market Name']}_{row['Market Location']}": (row['geometry'].y, row['geometry'].x)
-                                 for _, row in previous_gdf.iterrows()}
+                                 for _, row in previous_gdf.iterrows() if row['geometry'] is not None}
 
         # Transform DataFrame to GeoDataFrame
         geometry = [Point(xy) for xy in zip(

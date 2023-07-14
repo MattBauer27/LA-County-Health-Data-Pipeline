@@ -169,24 +169,24 @@ try:
             new_records_df = new_records_df.astype(str)
 
             # Dataframe for rows present in new_records_df but not in old_records_df
-            df_added = new_records_df[~new_records_df.apply(
-                tuple, 1).isin(old_records_df.apply(tuple, 1))]
+            df_added = new_records_df[~new_records_df[['Vendor', 'Address']].apply(tuple, 1).isin(
+                old_records_df[['Vendor', 'Address']].apply(tuple, 1))]
             df_added.to_csv(
                 f"WIC_Food_Retailers/Added/wic_food_retailers_added_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Dataframe for rows present in old_records_df but not in new_records_df
-            df_dropped = old_records_df[~old_records_df.apply(
-                tuple, 1).isin(new_records_df.apply(tuple, 1))]
+            df_dropped = old_records_df[~old_records_df[['Vendor', 'Address']].apply(tuple, 1).isin(
+                new_records_df[['Vendor', 'Address']].apply(tuple, 1))]
             df_dropped.to_csv(
                 f"WIC_Food_Retailers/Dropped/wic_food_retailers_dropped_{updated_date}.csv", index=False, encoding='utf-8')
 
             # Compute the number of newly opened and closed facilities
-            opened_df = new_records_df[~new_records_df['Vendor'].isin(
-                old_records_df['Vendor'])]
+            opened_df = new_records_df[~new_records_df[['Vendor', 'Address']].apply(tuple, 1).isin(
+                old_records_df[['Vendor', 'Address']].apply(tuple, 1))]
             opened = len(opened_df)
 
-            closed_df = old_records_df[~old_records_df['Vendor'].isin(
-                new_records_df['Vendor'])]
+            closed_df = old_records_df[~old_records_df[['Vendor', 'Address']].apply(tuple, 1).isin(
+                new_records_df[['Vendor', 'Address']].apply(tuple, 1))]
             closed = len(closed_df)
 
             # Create new DataFrame to store the result
